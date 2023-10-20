@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <div class="title">
+      <h1>Play the Magical Random Card Generator</h1>
     </div>
+    <div id="theDeck">
+      <div class="card" id="generatedCard"></div>
+    </div>
+    <div id="btn-container">
+      <button id="generate-card">Generate Card</button>
+      <button id="timer-card">Every 10 seconds</button>
+      <progress id="progressBar" value="0" max="10"></progress>
+    </div>
+    <div class="container">
+      <label for="card-height">Card Height:</label>
+      <input type="number" id="card-height" value="350" />
+      <label for="card-width">Card Width:</label>
+      <input type="number" id="card-width" value="225" />
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
