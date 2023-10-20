@@ -142,6 +142,6 @@ label {
 
 .particle {
   position: absolute;
-  background-color: #f00; /* Define your particle color */
+  background-color: #f00;
   border-radius: 50%;
 }

@@ -10,9 +10,11 @@ class CardGame {
     this.cardHeightInput = document.querySelector("#card-height");
     this.cardWidthInput = document.querySelector("#card-width");
 
-    this.generateCardButton.addEventListener("click", () =>
-      this.generateRandomCard()
-    );
+    this.generateCardButton.addEventListener("click", () => {
+      this.generateRandomCard();
+      // this.startConfettiAnimation(); // Load confetti and trigger the animation
+    });
+
     this.timerCardButton.addEventListener("click", () =>
       this.toggleCountdown()
     );
@@ -97,12 +99,15 @@ class CardGame {
 
     if (this.isCountdownRunning) {
       let timeleft = 10;
-      const interval = 1000; // Interval in milliseconds (1 second)
+      const interval = 1000; //(1 second)
 
       this.downloadTimer = setInterval(() => {
         if (timeleft <= 0) {
           clearInterval(this.downloadTimer);
           this.randomCard(this.deckBuilder());
+          // if (this.isCountdownRunning) {
+          //   this.startConfettiAnimation(); //confetti animation when countdown triggers
+          // }
           this.startCountdown();
         }
         const progress = ((10 - timeleft) / 10) * 100;
@@ -132,8 +137,19 @@ class CardGame {
   generateRandomCard() {
     this.randomCard(this.deckBuilder());
   }
-}
 
-//particle function to be created here:
+  //particle function to be created here:
+  // startConfettiAnimation() {
+  //   (async () => {
+  //     await loadConfettiPreset(tsParticles);
+  //     await tsParticles.load("tsparticles", {
+  //       preset: "confetti"
+  //       /* Additional configuration options for the confetti particles can be added here */
+  //     });
+  //     // Trigger the confetti animation
+  //     tsParticles.start("tsparticles");
+  //   })();
+  // }
+}
 
 const game = new CardGame();
